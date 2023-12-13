@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\Main File.obj" 
+TO ".\Objects\LCD_BLINKER" 
+PRINT(".\Listings\LCD_BLINKER.m51") RAMSIZE(256) 

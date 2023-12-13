@@ -1,0 +1,109 @@
+C51 COMPILER V9.60.7.0   MAIN_FILE                                                         01/18/2023 23:20:43 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN_FILE
+OBJECT MODULE PLACED IN .\Objects\Main File.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Main File.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings
+                    -\Main File.lst) TABS(2) OBJECT(.\Objects\Main File.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sfr LCD = 0xA0;
+   3          sbit RS = P1^0;
+   4          sbit RW = P1^1;
+   5          sbit EN = P1^2;
+   6          
+   7          void LCD_INI(void);
+   8          void LCD_CMD(unsigned char);
+   9          void LCD_DATA(unsigned char);
+  10          void msDelay(unsigned int);
+  11          void Send_Data(unsigned char *Str);
+  12          void LCD_LEFT(unsigned char);
+  13          void LCD_RIGHT(unsigned char);
+  14          
+  15          void main(void){
+  16   1        msDelay(10);
+  17   1        LCD_INI();
+  18   1        Send_Data("WELCOME TO ETC DEPARTMENT");
+  19   1        msDelay(100);
+  20   1        LCD_LEFT(10);
+  21   1        msDelay(300);
+  22   1        LCD_RIGHT(10);
+  23   1        while(1);
+  24   1      }
+  25          
+  26          void LCD_INI(void){
+  27   1        msDelay(100);
+  28   1        LCD_CMD(0x0E);
+  29   1        LCD_CMD(0x38);
+  30   1        LCD_CMD(0x01);
+  31   1        LCD_CMD(0x0c);
+  32   1        LCD_CMD(0x83);
+  33   1        LCD_CMD(0x06);
+  34   1        
+  35   1      
+  36   1      } 
+  37            
+  38          void LCD_CMD(unsigned char x){
+  39   1        LCD = x;
+  40   1        RS = 0;
+  41   1        RW = 0;
+  42   1        EN = 1;
+  43   1        msDelay(1);
+  44   1        EN = 0;
+  45   1        return;
+  46   1      } 
+  47          
+  48          void Send_Data(unsigned char *Str){
+  49   1        while(*Str)
+  50   1          LCD_DATA(*Str++);
+  51   1      } 
+  52          
+  53          void LCD_LEFT(unsigned char LEFT){
+  54   1        unsigned char cnt;
+C51 COMPILER V9.60.7.0   MAIN_FILE                                                         01/18/2023 23:20:43 PAGE 2   
+
+  55   1        for (cnt = 0; cnt < LEFT; cnt++){
+  56   2          LCD_CMD(0x18);
+  57   2          msDelay(300);
+  58   2        }
+  59   1      }
+  60          
+  61          void LCD_RIGHT(unsigned char RIGHT){
+  62   1        unsigned char cnt;
+  63   1        for(cnt = 0; cnt < RIGHT; cnt++){
+  64   2          LCD_RIGHT(0x1C);
+  65   2          msDelay(300);
+  66   2        }
+  67   1      } 
+  68          
+  69          void LCD_DATA(unsigned char w){
+  70   1        LCD = w;
+  71   1        RS = 1;
+  72   1        RW = 0;
+  73   1        EN = 1;
+  74   1        msDelay(1);
+  75   1        EN = 0;
+  76   1        return;
+  77   1      } 
+  78          
+  79          void msDelay(unsigned int Time){
+  80   1        unsigned int y,z;
+  81   1        for(y=0;y<Time;y++)
+  82   1        for(z=0;z<500;z++);
+  83   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    237    ----
+   CONSTANT SIZE    =     26    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       7
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

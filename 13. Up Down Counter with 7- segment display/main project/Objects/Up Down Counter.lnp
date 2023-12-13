@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\Main File.obj" 
+TO ".\Objects\Up Down Counter" 
+PRINT(".\Listings\Up Down Counter.m51")

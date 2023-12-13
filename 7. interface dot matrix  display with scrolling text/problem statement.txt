@@ -1,0 +1,1 @@
+interface 8x8 dot matrix display with 8051 and scroll the text on dot matrix display

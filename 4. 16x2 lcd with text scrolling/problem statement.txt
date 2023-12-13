@@ -1,0 +1,1 @@
+interface 16x2 lcd with 8051 microcontroller and scroll text in display

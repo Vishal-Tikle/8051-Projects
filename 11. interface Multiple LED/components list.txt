@@ -1,0 +1,9 @@
+1)	8051(89s52)
+2)	led's
+3)	Ic 7805
+4)	Crystal
+5)	Capacitors
+6)	Zero pcb
+7)	Jumper Wires
+8)	Battery connector
+9)	Battery 9v

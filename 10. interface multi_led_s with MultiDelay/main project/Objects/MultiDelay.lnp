@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\Main File.obj" 
+TO ".\Objects\MultiDelay" 
+PRINT(".\Listings\MultiDelay.m51")

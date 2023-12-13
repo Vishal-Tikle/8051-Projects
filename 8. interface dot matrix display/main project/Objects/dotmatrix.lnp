@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\mainfile.obj" 
+TO ".\Objects\dotmatrix" 
+PRINT(".\Listings\dotmatrix.m51")

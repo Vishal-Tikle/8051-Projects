@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\Main File.obj" 
+TO ".\Objects\Multiple LED" 
+PRINT(".\Listings\Multiple LED.m51")

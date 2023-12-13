@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\Main File.obj" 
+TO ".\Objects\LCD_scoll" 
+PRINT(".\Listings\LCD_scoll.m51") RAMSIZE(256) 
